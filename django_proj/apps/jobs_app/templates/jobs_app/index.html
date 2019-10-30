@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scott Kerkove</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'jobs_app/css/style.css' %}">
+
+</head>
+
+<body>
+
+    <div id="container">
+
+        <header>
+            <div class=left>
+                <h4>Hello {{request.session.user_firstname}}</h4>
+            </div>
+            <div class="right">
+                <h4><a href="/users/logout">Logout</a></h4>
+            </div>
+        </header>
+
+        <main>
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4"></h1><br>
+                    <p class="lead"> Select language to search for...</p>
+                </div>
+            </div>
+            <div class="buttonWrapper">
+                <form action="/process" method='POST'>
+                    <button id="pythonCard"></button>
+                    {% csrf_token %}
+                    <input type="hidden" name="language" value="python">
+                </form>
+                <form action="/process" method='POST'>
+                    {% csrf_token %}
+                    <input type="hidden" name="language" value="javascript">
+                    <button id="javaScriptCard"></button>
+                </form>
+                <form action="/process" method='POST'>
+                    {% csrf_token %}
+                    <input type="hidden" name="language" value="java">
+                    <button id="javaCard"></button>
+                </form>
+                <form action="/process" method='POST'>
+                    {% csrf_token %}
+                    <input type="hidden" name="language" value="php">
+                    <button id="phpCard"></button>
+                </form>
+            </div>
+        </main>
+
+    </div>
+</body>
+
+</html>

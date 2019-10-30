@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: lighter;
+}
+header{
+    border: 1px solid silver;
+    border-radius: 5px;
+    width:100%;
+    background-color: black;
+    padding: 5px;
+    margin-bottom: 5px;
+    color:white;
+    text-align: center;
+    font-size: 16px;
+    height: 40px;
+
+}
+#job_list{
+    display: inline-block;
+    width:35%;
+    height: 450px;
+    vertical-align: top;
+    margin-top: 10px;
+    overflow: auto;
+}
+#map{
+    width: 60%; 
+    height: 450px;
+    margin-left: 10px;
+    margin-top: 10px;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 4px;
+    border: 2px solid silver;
+    
+}
+main{
+    
+    background-image: linear-gradient(rgb(24, 24, 26),white);
+    /* background:rgba(0,0,0,0.5); */
+    border-radius: 4px;
+}
+
+h4{
+    display: inline-block;
+}
+.left{
+    color: white;
+    display: inline-block;
+    position: absolute; left: 5px;
+    
+}
+.right{
+    text-align: right;
+    color: white;
+    display: inline-block;
+    position: absolute; right: 5px;
+}
+
+.right h4 a{
+    text-align: right;
+    color: white;
+}
+.mid{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+span{
+    font-family: 'Courier New';
+}
+h2{
+    margin-left: 5px;
+}
+

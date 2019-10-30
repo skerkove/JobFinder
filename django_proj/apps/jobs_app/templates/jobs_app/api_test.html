@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'jobs_app/css/api_style.css' %}">
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="jquery-2.1.4.js"></script>
+
+    <title>GET jobs</title>
+</head>
+
+<body>
+
+    <header>
+        <div class=left>
+            <h4>{{request.session.user_firstname}} {{request.session.user_lastname}}</h4>
+        </div>
+        <div class=mid>
+            <h4><a href="/home">Home</a></h4>
+        </div>
+        <div class="right">
+            <h4><a href="/users/logout">Logout</a></h4>
+        </div>
+    </header>
+
+
+    <h2><span>GET Jobs: </span>{{request.session.language}}</h2>
+    <main>
+        <div id='map'></div>
+        <script type="text/javascript">
+            L.mapquest.key = 'qYmTMqTc1RTcWVJZNMfD5MycnpPUcChK';
+            var cityList = {{ html_locations| safe }};
+            console.log(cityList)
+            L.mapquest.geocoding().geocode(cityList, createMap)
+
+            function createMap(error, response) {
+                var map = L.mapquest.map('map', {
+                    center: [39.1, -96.5],
+                    layers: L.mapquest.tileLayer('map'),
+                    zoom: 4
+                });
+                // Generate the feature group containing markers from the geocoded locations
+                var featureGroup = generateMarkersFeatureGroup(response);
+
+                // Add markers to the map and zoom to the features
+                featureGroup.addTo(map);
+                //map.fitBounds(featureGroup.getBounds());
+            }
+            function generateMarkersFeatureGroup(response) {
+                var group = [];
+                for (var i = 0; i < response.results.length; i++) {
+                    var location = response.results[i].locations[0];
+                    var locationLatLng = location.latLng;
+                    //console.log("map", location.adminArea5)
+                    jobs = ""
+                    console.log(location.adminArea5)
+                    {% for job in html_show_job %}
+                    if (location.adminArea5 == "{{job.location}}") {
+                        jobs += '*' + '<a href="' + '{{job.jpost_url}}' + '">' + '{{job.jtitle}}' + '</a>' + '<br>'
+
+                    }
+                    {% endfor %}
+
+                    console.log(jobs)
+                    // Create a marker for each location
+                    var marker = L.marker(locationLatLng, { icon: L.mapquest.icons.marker() })
+                    var titleLoc = location.adminArea5 + ', ' + location.adminArea3 + '<br>'
+                    marker.bindPopup(titleLoc + jobs);
+
+                    group.push(marker);
+                }
+                return L.featureGroup(group);
+            }
+
+        </script>
+
+        <div id="job_list">
+            <div class="container">
+                {% for city in html_locations %}
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><strong>{{city}}</strong></h3>
+                            </div>
+                            <ul class="list-group"></ul>
+                            {% for job in html_show_job %}
+                            {% if job.location == city %}
+                            <a href="{{job.jpost_url}}">{{job.jtitle}}</a> - {{job.jcompany}} <br>
+                            {% endif %}
+                            {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

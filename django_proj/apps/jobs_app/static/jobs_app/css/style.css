@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: lighter;
+    font-family: helvetica;
+    
+}
+#container{
+    padding-top: 5px;
+    width: 100%;
+    height: 750px;
+    background-image: linear-gradient(rgb(24, 24, 26),white,rgb(24, 24, 26));
+    /* background-image: url("/static/jobs_app/imgs/matrix-rain.png"); */
+    background-color: black;
+    background-size: cover;
+}
+.buttonWrapper{
+    display: block;
+    width: 100%;
+    text-align: center;
+
+}
+form{
+    display: inline-block;
+    width: 20%;
+    justify-content: space-evenly;
+    height: 300px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 2.5px 2.5px silver;
+    background-color: black;
+}
+#pythonCard, #javaScriptCard, #javaCard, #phpCard{
+    width: 100%;
+    display: block;
+    height: 100%;
+    border-radius: 10px;
+    background-color: black;       
+}
+
+#pythonCard:hover, #javaScriptCard:hover, #javaCard:hover, #phpCard:hover{
+    background-color: green;
+    
+}
+#pythonCard{
+    background-image: url("/static/jobs_app/imgs/python-logo.png");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}  
+#javaScriptCard{
+    background-image: url("/static/jobs_app/imgs/javascript_logo.png");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#javaCard{
+    background-image: url("/static/jobs_app/imgs/java_logo.png");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#phpCard{
+    background-image: url("/static/jobs_app/imgs/php.png");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.jumbotron{
+    text-align: center;
+    background-color: rgba(170, 206, 173, 0);
+    color: white;
+    margin: 20px 10px;
+    font-family: helvetica;
+}
+header{
+    border: 1px solid silver;
+    border-radius: 5px;
+    width:100%;
+    background-color: black;
+    padding: 5px;
+    margin-bottom: 5px;
+    color:white;
+    text-align: center;
+    height: 40px;
+    font-size: 18px;
+}
+.left{
+    color: white;
+    display: inline-block;
+    position: absolute; left: 5px;
+    
+}
+.right{
+    text-align: right;
+    color: white;
+    display: inline-block;
+    position: absolute; right: 5px;
+}
+
+.right h4 a{
+    text-align: right;
+    color: white;
+    text-decoration: none;
+}
+.mid{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+@media only screen and (max-width: 480px){
+    form{
+        width:80%; 
+        height: 75px;
+        background-size: cover;
+        background-position: center; 
+    }
+}
+
+@media only screen and (min-width: 481px){
+    form{
+        width: 40%;  
+        height: 150px;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    form{
+        width: 20%;  
+        height: 300px;
+    }
+    
+} 

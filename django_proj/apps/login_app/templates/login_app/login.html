@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'login_app/css/style.css' %}">
+    <title>GET jobs</title>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <div class="left">
+                <h3>GET Jobs</h3>
+            </div>
+            <div class="login">
+                < <h3>Login <strong>|</strong> </h3>
+                    <form action="/users/login" method="POST">
+                        {% csrf_token %}
+                        <ul>
+                            <li>
+                                <h4>Email</h4>
+                            </li>
+                            <li><input type="text" , name="email"></li>
+                            <li>
+                                <h4>Password</h4>
+                            </li>
+                            <li><input type="password" , name="password"></li>
+                        </ul>
+                        <input type="submit" name="login" value="Login" id="login_button">
+                    </form>
+            </div>
+        </header>
+
+        <main>
+            <div class="main-reg">
+                <div class="form-heading">Registration</div>
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                <div class="form-reg">
+                    <form action="/users/register" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <div class="form-label">First Name :</div>
+                            <div class="form-input">
+                                <input type="text" name="first_name" id="firstname">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-label">Last Name :</div>
+                            <div class="form-input">
+                                <input type="text" name="last_name" id="firstname">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-label">Email :</div>
+                            <div class="form-input">
+                                <input type="text" name="email" id="firstname">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-label">Password :</div>
+                            <div class="form-input">
+                                <input type="Password" name="password" id="firstname">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-label">Confirm Password :</div>
+                            <div class="form-input">
+                                <input type="Password" name="pw_confirm" id="firstname">
+                            </div>
+                        </div>
+                        <div class="bottom-footer">
+                            <button type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+
+</html>

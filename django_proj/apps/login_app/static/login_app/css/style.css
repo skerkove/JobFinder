@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: lighter;  
+}
+header{
+   display: block;
+   font-size: 16px; 
+   padding: 3px;
+   border: 1px solid silver;
+   border-radius: 4px;
+   height: 40px;
+}
+h3{
+    color: white;
+}
+h4{
+    color: white;
+    font-size: 14px;
+}
+.login{
+    text-align: right;
+    display: inline-block;
+    position: absolute; right: 5px;
+    padding: 5px;
+}
+.login h3, .login ul, .login li{
+    display: inline-block;
+}
+.login h3, .login ul{
+    vertical-align: bottom;
+}
+.login form{
+    display: inline-block;
+}
+.login input{
+    border-radius: 2px;
+    box-shadow: none;
+}
+#login_button{
+    background-color: #398439;
+    box-shadow: none;
+    color: white;
+}
+footer, header{
+    background-color: black;
+    
+}
+footer{
+    height: 20px;
+}
+.messages{
+    color: red;
+    list-style: none;
+} 
+
+body{
+	background:rgba(0,0,0,0.5);
+}
+.main-reg{
+	background:rgba(0,0,0,0.7);
+	width:100%;
+	max-width: 500px;
+	margin:0 auto;
+	padding: 20px;
+	border-radius: 4px;
+	    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border: 1px solid silver;
+}
+.main-reg .form-heading{
+	font-size: 25px;
+	color:#fff;
+	font-weight: 600;
+	text-align: center;
+	padding:5px 0px;
+	border-bottom: solid 1px #847E78;
+}
+
+.form-reg{
+	justify-content: center;
+	width: 100%;
+	display:flex;
+}
+
+.form-group{
+	margin: 10px 0px;
+	justify-content:center;
+}
+.form-label{
+	width: 100%;
+    max-width: 150px;
+    min-width: 150px;
+	color:#fff;
+	padding: 10px 0px;
+}
+.form-input input{
+	padding: 10px 5px;
+	border-radius: 4px;
+	border:none;
+	outline:none;
+	width:250px;
+	color:black;
+}
+
+.form-input select{
+	width: 263px;
+   	border-radius: 4px;
+    border: none;
+    padding: 10px 5px;
+}
+.form-group textarea{
+	height: 40px;
+	width:250px;
+	resize: none;
+	padding:10px 5px;
+	border-radius: 4px;
+}
+.form-group{
+	display: flex;
+}
+
+.radio-label{
+	display: flex;
+}
+.form-radio{
+	color:#ffffff;
+	padding: 10px 0px;
+	width:262px;
+}
+.form-radio input[type="radio"]{
+	padding: 0px 5px;
+    display: inline;
+    margin: 0px 2px;
+}
+.form-reg form{
+	margin-top: 20px;
+	width:100%;
+}
+.bottom-footer{
+	border-top: 1px solid #847E78;
+	text-align: center;
+    padding: 10px 0px;
+}
+button[type="reset"]{
+	background:#204d74;
+	border:none;
+	border-radius: 4px;
+	padding: 8px 15px;
+	color: #fff;
+	margin-right: 5px;
+	cursor: pointer;
+}
+button[type="submit"]{
+	background:#398439;
+	border:none;
+	border-radius: 4px;
+	padding:8px 5px;
+	color: #fff;
+    cursor: pointer;
+}
+.left{
+    display: inline-block;
+    font-family: 'Courier New';
+    padding: 5px;
+}
