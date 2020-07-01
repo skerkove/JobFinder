@@ -1,3 +1,3 @@
 # JobFinder
+![alt text](https://github.com/skerkove/JobFinder/blob/master/GJ1.png?raw=true)
 
-![alt text](images/getJobs/GJ1.png "Description goes here")
