@@ -1,2 +1,2 @@
 # JobFinder
-![image](/Users/scottkerkove/Desktop/Portfolio2/images/getJobs/GJ1.png)
+![image](https://github.com/skerkove/JobFinder/blob/master/screenshots/GJ1.png)
