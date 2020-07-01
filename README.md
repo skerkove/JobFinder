@@ -1,2 +1,11 @@
 # JobFinder
 ![image](https://github.com/skerkove/JobFinder/blob/master/screenshots/GJ1.png)
+![image](https://github.com/skerkove/JobFinder/blob/master/screenshots/GJ2.png)
+![image](https://github.com/skerkove/JobFinder/blob/master/screenshots/GJ3.png)
+![image](https://github.com/skerkove/JobFinder/blob/master/screenshots/GJ4.png)
+![image](https://github.com/skerkove/JobFinder/blob/master/screenshots/GJ5.png)
+![image](https://github.com/skerkove/JobFinder/blob/master/screenshots/GJ6.png)
+![image](https://github.com/skerkove/JobFinder/blob/master/screenshots/GJ7.png)
+![image](https://github.com/skerkove/JobFinder/blob/master/screenshots/GJ8.png)
+![image](https://github.com/skerkove/JobFinder/blob/master/screenshots/GJ9.png)
+![image](https://github.com/skerkove/JobFinder/blob/master/screenshots/GJ10.png)
